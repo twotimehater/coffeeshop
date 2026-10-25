@@ -11,6 +11,11 @@ icon.style.backgroundColor = '#f0f0f0';
 
   btn.forEach((btn) => {
     btn.addEventListener('click', async () => {
+
+    gtag('event', 'order_click', {
+    button_text: btn.textContent
+    });
+      
       btn.disabled = true;
       btn.innerHTML = 'Додано до кошику!';
       btn.style.transition = '0';
