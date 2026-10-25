@@ -13,7 +13,7 @@ icon.style.backgroundColor = '#f0f0f0';
     btn.addEventListener('click', async () => {
 
     gtag('event', 'order_click', {
-    button_text: btn.textContent
+    console.log('Works')
     });
       
       btn.disabled = true;
