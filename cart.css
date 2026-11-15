@@ -3,7 +3,7 @@
 transition:0.3s;
 opacity:0.5;
 display: flex;
-align-items: center;
+align-items: center; 
 gap: 160px;
 left: -290px;
 top:90px;
