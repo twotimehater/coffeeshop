@@ -3,7 +3,7 @@
 transition:0.3s;
 opacity:0.5;
 display: flex;
-align-items: center; 
+align-items: center;
 gap: 160px;
 left: -290px;
 top:90px;
@@ -91,4 +91,16 @@ h3 {
 color:#b8bee4;
 font-family: 'Play', sans-serif;
 font-size:25px;
+}
+.clear {
+    display:block;
+    margin: auto auto;
+    transition:0.4s;
+    background-color:rgb(107, 121, 253);
+    color:white;
+    font-family: 'Play', sans-serif;
+    font-size:20px;
+    border:none;
+    border-radius:10px;
+    padding:10px 20px;
 }
