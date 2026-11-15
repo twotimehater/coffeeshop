@@ -85,10 +85,12 @@ cart.forEach(item => {
 document.getElementById('total').textContent = total;
 
 function clearCart() {
+if(confirm('Ви впевнені, що хочете очистити кошик?')) {
 
     localStorage.removeItem('cart');
 
     location.reload();
-
-}
+}else {
+    return;
+}};
 
