@@ -9,21 +9,21 @@ icon.style.backgroundColor = '#f0f0f0';
 
 
 
-  btn.forEach((btn) => {
+ btn.forEach((btn) => {
     btn.addEventListener('click', async () => {
 
-    gtag('event', 'order_click', {
-    console.log('Works');
-    });
-      
+          gtag('event', 'order_click', {
+        button_text: btn.textContent
+      });
+
       btn.disabled = true;
-      btn.innerHTML = 'Додано до кошику!';
+      btn.innerHTML = 'Додано до замовлення!';
       btn.style.transition = '0';
 
-      setInterval(() => {
+      setTimeout(() => {
         btn.innerHTML = 'Замовити';
         btn.disabled = false;
-        }, 1500);
+        }, 2000);
     });
   });
 
@@ -50,3 +50,45 @@ icon.style.backgroundColor = '#f0f0f0';
     },
   });
 });
+
+function addToCart(name, price) {
+
+    let cart = JSON.parse(localStorage.getItem('cart')) || [];
+
+    cart.push({
+        name: name,
+        price: price
+    });
+
+    localStorage.setItem('cart', JSON.stringify(cart));
+
+}
+let cart = JSON.parse(localStorage.getItem('cart')) || [];
+
+const cartList = document.getElementById('cart-list');
+
+let total = 0;
+
+cart.forEach(item => {
+
+    const h3 = document.createElement('h3');
+
+    h3.textContent =
+        `${item.name} - ${item.price} грн`;
+
+    cartList.appendChild(h3);
+
+    total += item.price;
+
+});
+
+document.getElementById('total').textContent = total;
+
+function clearCart() {
+
+    localStorage.removeItem('cart');
+
+    location.reload();
+
+}
+
