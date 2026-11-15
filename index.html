@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="uk">
 <head>
-<title>Coffee Shop</title>
+<title>Coffee Menu</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Geist+Mono:ital,wght@0,100..900;1,100..900&family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&family=Play:wght@400;700&family=Press+Start+2P&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap" rel="stylesheet">
@@ -11,7 +11,7 @@
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.css"/>
 <link rel="stylesheet" href="style.css">
 <script src="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.js"></script>
-    <!-- Google tag (gtag.js) -->
+<!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-TMMSMC9MRW"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
@@ -23,21 +23,25 @@
 </head>
 <body>
 <header>
+<div class="order">
+<a href="cart.html">Замовлення</a>
+<img src="https://cdn-icons-png.flaticon.com/512/1413/1413908.png" width="50" height="50">
+</div>
 <svg class = "icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#7c7ccb" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-coffee"><path stroke="none" d="M0 0h24v24H0z" fill="none" /><path d="M3 14c.83 .642 2.077 1.017 3.5 1c1.423 .017 2.67 -.358 3.5 -1c.83 -.642 2.077 -1.017 3.5 -1c1.423 -.017 2.67 .358 3.5 1" /><path d="M8 3a2.4 2.4 0 0 0 -1 2a2.4 2.4 0 0 0 1 2" /><path d="M12 3a2.4 2.4 0 0 0 -1 2a2.4 2.4 0 0 0 1 2" /><path d="M3 10h14v5a6 6 0 0 1 -6 6h-2a6 6 0 0 1 -6 -6v-5" /><path d="M16.746 16.726a3 3 0 1 0 .252 -5.555" /></svg>
 <img class="banner" src="https://t3.ftcdn.net/jpg/01/94/82/86/360_F_194828624_llDpKzFNYmi6cfHVF8GOOoAe5KTJlc9N.jpg">
 <div class="title">
 <h1><b>Світ Кави</b></h1>
 <h3>Починай ранок з <span> кавою</span> </h3>
 </div>
-<h2>Популярне</h2>
+<h2>Кава Тижня</h2>
 <div class="card">
     <img class="card-image" src="https://coffeeisland.in/cdn/shop/files/bumble-coffee-1773552.png?v=1751950521"/>
         <div class="card-body">
                 <span class="new">Новинка!</span>
             <h3 class="new-coffee">Bumble</h3>
-            <span class="old-price">80 грн<br></span>
-            <span class="new-price">59 грн</span>
-            <button class="card-btn">Замовити</button>
+            <span class="old-price">95 грн<br></span>
+            <span class="new-price">69 грн</span>
+            <button onclick="addToCart('Bumble', 69)" class="card-btn">Замовити</button>
         </div>
 </div>
 </header>
@@ -50,7 +54,7 @@
         <div class="card-body">
             <h3>Еспресо</h3>
             <span class="price">42 грн</span>
-            <button class="card-btn">Замовити</button>
+            <button onclick="addToCart('Еспресо', 42)" class="card-btn">Замовити</button>
         </div>
     </div>
     <div class="card swiper-slide">
@@ -58,7 +62,7 @@
         <div class="card-body">
             <h3>Американо</h3>
             <span class="price">35 грн</span>
-            <button class="card-btn">Замовити</button>
+            <button onclick="addToCart('Американо', 35)" class="card-btn">Замовити</button>
         </div>
     </div>
     <div class="card swiper-slide">
@@ -66,7 +70,7 @@
         <div class="card-body">
             <h3>Капучино</h3>
             <span class="price">45 грн</span>
-            <button class="card-btn">Замовити</button>
+            <button onclick="addToCart('Капучино', 45)" class="card-btn">Замовити</button>
         </div>
     </div>
     <div class="card swiper-slide">
@@ -74,16 +78,47 @@
         <div class="card-body">
             <h3>Лате</h3>
             <span class="price">49 грн</span>
-            <button class="card-btn">Замовити</button>
+            <button onclick="addToCart('Лате', 49)" class="card-btn">Замовити</button>
         </div>
     </div>
     <div class="swiper-button-prev"></div>
     <div class="swiper-button-next"></div>
     </div>
 </div>
-<h2>Десерти <br>(Незабаром)</h2>
+<h2>Десерти</h2>
+<div class="swiper">
+    <div class="swiper-wrapper">
+        <div class="card swiper-slide">
+        <img class="card-image" src="https://www.wendys.com/sites/default/files/styles/max_650x650/public/2025-02/600x400_MobileAPP-b5d7a4b1-1da9-40b6-a689-2cdd03e81a8c_0.png?itok=1CzAkyjn"/>
+            <div class="card-body">
+            <h3>Міні Донат</h3>
+            <span class="price">35 грн</span>
+            <button class="card-btn">Замовити</button>
+            </div>
+        </div>
+        <div class="card swiper-slide">
+        <img class="card-image" src="https://static.vecteezy.com/system/resources/thumbnails/039/851/680/small/ai-generated-macaroons-clip-art-free-png.png"/>
+            <div class="card-body">
+            <h3>Макарун</h3>
+            <span class="price">49 грн</span>
+            <button class="card-btn">Замовити</button>
+            </div>
+        </div>
+        <div class="card swiper-slide">
+        <img class="card-image" src="https://png.pngtree.com/png-vector/20240309/ourmid/pngtree-chocolate-brownies-on-wooden-table-png-image_11911566.png"/>
+            <div class="card-body">
+            <h3>Брауні</h3>
+            <span class="price">55 грн</span>
+            <button class="card-btn">Замовити</button>
+            </div>
+        </div>
+    </div>
+</div>
 <script src="script.js" defer></script>
 </main>
 <footer>
+<h2>
+Контакти
+</h2>
 </footer>
 </body>
